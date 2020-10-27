@@ -15,19 +15,21 @@ const UserTable = (props) => {
     <table>
       <thead>
         <tr>
-          <th> Name </th>
-          <th> Username </th>
-          <th> Actions </th>
+          <th> Name </th> <th> Username </th> <th> Actions </th>
         </tr>
       </thead>
       <tbody>
         {props.users.length > 0 ? (
           props.users.map((user, index) => (
             <tr key={user.id}>
-              <td> {user.name} </td>
-              <td> {user.username} </td>
+              <td> {user.name} </td> <td> {user.username} </td>
               <td>
-                <button className="button muted-button" onClick={handlerEdite(user, index)}>
+                <button
+                  className="button muted-button"
+                  onClick={() => {
+                    handlerEdite(user, index);
+                  }}
+                >
                   Edit
                 </button>
                 <button
@@ -43,7 +45,7 @@ const UserTable = (props) => {
           ))
         ) : (
           <tr>
-            <td>NoUsers</td>
+            <td> NoUsers </td>
           </tr>
         )}
       </tbody>
