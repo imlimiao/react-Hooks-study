@@ -8,7 +8,7 @@ const UserTable = (props) => {
   };
 
   const handlerEdite = (user, index) => {
-    props.editUser(user, index);
+    props.editRow(user, index);
   };
 
   return (
