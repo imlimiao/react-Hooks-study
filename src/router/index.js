@@ -1,12 +1,10 @@
 import React from "react";
 import { HashRouter, Route } from "react-router-dom";
-import App from "../App";
-import Layout from "../compontes/pages/index";
+import JzMoney from "../compontes/pages/Jzpage/index.js";
 
 const BasicRoute = () => (
   <HashRouter>
-    <Route exact path="/" component={App} />
-    <Route exact path="/Layout" component={Layout} />
+    <Route exact path="/" component={JzMoney} />
   </HashRouter>
 );
 
