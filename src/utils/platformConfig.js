@@ -8,5 +8,5 @@ const platformConfig = (() => {
     return 'm-browser'; //非微信浏览器
   }
 })();
-window.platformConfig = platformConfig;
+//window.platformConfig = platformConfig;
 export default platformConfig;
