@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useParams, useLocation, useHistory } from "react-router-dom";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { setLog } from "../../../utils/utils";
 import Toast from "../../toast/index";
@@ -11,6 +12,7 @@ let debounceTime = null;
 let last = null;
 let timer = null;
 let threshold = 2000;
+
 const JzMoney = () => {
   const [copyText, setCopyText] = useState(
     `https://qjzapi.58.com/api/m/renwu/list`
@@ -30,6 +32,7 @@ const JzMoney = () => {
       }
     }, 0);
   };
+
 
   const copyState = (text, result) => {
     console.log(text, result, "==="); //做防抖操作

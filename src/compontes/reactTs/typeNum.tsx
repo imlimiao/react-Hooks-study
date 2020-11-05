@@ -1,25 +1,15 @@
-import React, { useState, useEffect, ReactElement } from "react";
+import React, { useState, useEffect, FunctionComponent } from "react";
 import { useParams, useLocation, useHistory } from "react-router-dom";
 
-function Temp(): ReactElement {
+const TypeNum: FunctionComponent<any> = (props: any) => {
+  const location = useLocation();
   const history = useHistory();
-  let slug = useParams();
-  let location = useLocation();
-  return (
-    <div>
-      <button
-        onClick={() => {
-          //GotoIndex();
-          console.log(history, slug, location);
-        }}
-      >
-        我在干什么
-      </button>
-    </div>
-  );
-}
+  let params = useParams();
 
-const TypeNum: React.FC<any> = (props: any) => {
+  useEffect(() => {
+    console.log(location, "location");
+  });
+
   interface BookNum {
     pageName: string;
     pageNum?: Number;
@@ -27,11 +17,15 @@ const TypeNum: React.FC<any> = (props: any) => {
     pageData: Array<Number>;
   }
 
-  const getPage = (BookNumObj: BookNum) => {
-    const jumpUrl = (str: string) => {
-      console.log(str);
-    };
+  const jumpUrl = (str: string) => {
+    const slug: any = params;
+    console.log(str, props, slug.slug);
+    //history.push("/");
+    // getLocation(str);
+  };
 
+  const getPage = (BookNumObj: BookNum, props: any) => {
+    let propsParent = props;
     return (
       <div>
         <ul className="pageTab">
@@ -53,12 +47,7 @@ const TypeNum: React.FC<any> = (props: any) => {
     );
   };
 
-  return (
-    <div>
-      {getPage(props.BookNum)}
-      <Temp></Temp>
-    </div>
-  );
+  return <div>{getPage(props.BookNum, props)}</div>;
 };
 
 export default TypeNum;

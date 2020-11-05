@@ -20,7 +20,8 @@ const BasicRoute = () => (
   <HashRouter>
     <Route exact path="/" component={JzMoney} />
     <Route exact path="/context" component={reactContext} />
-    <Route exact path="/tsDemo/:slug" component={tsDemo} />
+    <Route exact path="/tsDemo/:slug" component={tsDemo}/>
+
   </HashRouter>
 );
 
