@@ -18,14 +18,20 @@ const TypeNum: FunctionComponent<any> = (props: any) => {
   }
 
   const jumpUrl = (str: string) => {
-    const slug: any = params;
+    const slug: { slug: any } = { slug: {}, ...params };
     console.log(str, props, slug.slug);
     //history.push("/");
     // getLocation(str);
   };
 
   const getPage = (BookNumObj: BookNum, props: any) => {
-    let propsParent = props;
+    const LOCAL_STORAGE: { LOCALE: string; CREDENTIALS_KEY: string } = {
+      LOCALE: "app:locale",
+      CREDENTIALS_KEY: "app:credentials",
+    };
+
+    console.log(LOCAL_STORAGE)
+
     return (
       <div>
         <ul className="pageTab">
